@@ -456,16 +456,6 @@
                 flex-direction: column;
                 gap: 20px;
             }
-            .modal-content .cerrar {
-        top: 10px !important;
-        right: 10px !important;
-        font-size: 2rem;
-        z-index: 1001;
-        color: #333;
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: 50%;
-        padding: 4px 10px;
-    }
         }
 
         .modal {
@@ -489,6 +479,9 @@
             position: relative;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 0.5s ease;
+            overflow-y: auto;
+            max-height: 85vh;
+            padding-top: 50px;
         }
 
         .modal-content h2 {
@@ -523,7 +516,7 @@
         }
 
         .cerrar {
-            position: absolute;
+            position: sticky;
             top: 15px;
             right: 20px;
             font-size: 1.8rem;
@@ -1204,4 +1197,5 @@
 </body>
 
 </html>
+
 
