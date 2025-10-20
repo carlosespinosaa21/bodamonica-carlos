@@ -23,6 +23,7 @@
             background: url("Invitacion_1_Iconos.jpg") center/cover fixed no-repeat;
             position: relative;
             z-index: 0;
+            background-attachment: scroll;
         }
 
         /* capa blanca semitransparente para que el texto se lea bien */
@@ -455,6 +456,16 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            .modal-content .cerrar {
+        top: 10px !important;
+        right: 10px !important;
+        font-size: 2rem;
+        z-index: 1001;
+        color: #333;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        padding: 4px 10px;
+    }
         }
 
         .modal {
@@ -1193,3 +1204,4 @@
 </body>
 
 </html>
+
