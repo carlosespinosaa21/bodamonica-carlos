@@ -20,27 +20,40 @@
 
         /* Fondo general para todo el contenido después del hero */
         .main-background {
+        position: relative;   /* importante: para que ::before funcione correctamente */
+        z-index: 0;
         background-image: url("Invitacion_1_Iconos.jpg");
-        background-position: center;
-        background-size: cover;
+        background-position: center center;
+        background-size: cover;    /* desktop: cubrir toda el área */
         background-repeat: no-repeat;
-        background-attachment: scroll;
+        background-attachment: scroll; /* evitar problemas en móviles */
+        min-height: 100vh; /* asegura que el fondo tenga altura suficiente */
         }
-        @media (max-width: 768px) {
-        .main-background {
-            background-size: cover;
-            background-position: center top;
-            background-attachment: scroll;
-            }
-        }
-        
+
         /* capa blanca semitransparente para que el texto se lea bien */
         .main-background::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: -1;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.85);
+        z-index: 1; /* por encima del fondo pero por debajo del contenido */
+        }
+
+        /* asegurar que el contenido interno quede por encima de la capa */
+        .main-background > * {
+        position: relative;
+        z-index: 2;
+        }
+
+        /* ajustes específicos para móviles: menos recorte / menos zoom */
+        @media (max-width: 768px) {
+        .main-background {
+            background-size: contain;      /* muestra la imagen completa en móvil */
+            background-position: top center;
+            background-attachment: scroll;
+            min-height: 60vh; /* reduce la altura para que no se vea gigante */
+            padding-bottom: 30px; /* evita que el contenido quede pegado si el fondo es más pequeño */
+            }
         }
 
         /* ===== ANIMACIONES ===== */
@@ -1255,6 +1268,7 @@
 </body>
     
 </html>
+
 
 
 
