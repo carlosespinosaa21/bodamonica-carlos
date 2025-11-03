@@ -20,19 +20,20 @@
 
         /* Fondo general para todo el contenido después del hero */
         .main-background {
-        background: url("Invitacion_1_Iconos.jpg") center/cover no-repeat fixed;
-        position: relative;
-        z-index: 0;
+        background-image: url("Invitacion_1_Iconos.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
         }
-
-        /* En móviles, desactivar el fixed */
         @media (max-width: 768px) {
-            .main-background {
-                background-attachment: scroll;
+        .main-background {
+            background-size: contain;
+            background-position: top center;
+            background-attachment: scroll;
             }
         }
-
-
+        
         /* capa blanca semitransparente para que el texto se lea bien */
         .main-background::before {
             content: "";
@@ -1254,4 +1255,5 @@
 </body>
     
 </html>
+
 
