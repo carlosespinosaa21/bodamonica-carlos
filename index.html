@@ -20,13 +20,16 @@
 
         /* Fondo general para todo el contenido después del hero */
         .main-background {
-            background-image: url("Invitacion_1_Iconos.jpg");
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            position: relative;
-            z-index: 0;
+        background: url("Invitacion_1_Iconos.jpg") center/cover no-repeat fixed;
+        position: relative;
+        z-index: 0;
+        }
+
+        /* En móviles, desactivar el fixed */
+        @media (max-width: 768px) {
+            .main-background {
+                background-attachment: scroll;
+            }
         }
 
 
@@ -1251,3 +1254,4 @@
 </body>
     
 </html>
+
