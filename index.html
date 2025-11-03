@@ -15,7 +15,7 @@
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            background: #77b885;
+            background: #ffffff;
         }
 
         /* Fondo general para todo el contenido después del hero */
@@ -97,7 +97,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #777;
             overflow: hidden;
         }
 
@@ -113,47 +112,128 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.78);
             z-index: 1;
         }
 
         .hero-content {
+            position: relative;
             z-index: 2;
-            animation: fadeInUp 1.5s ease;
-        }
-
-        .fecha {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            color: #777;
-        }
-
-        .nombres {
+            color: #333;
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
+            animation: fadeInUp 1.5s ease;
+            max-width: 600px;
+        }
+
+        /* Texto superior */
+        .texto-invitacion {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
             font-weight: 400;
-            margin: 0;
-            color: #555;
+            margin-bottom: 6px;
+            color: #2f2f2f;
         }
 
-        .and {
-            display: inline-block;
-            margin: 0 10px;
-            font-size: 2rem;
-            background: #ddd;
-            color: #555;
-            padding: 5px 15px;
-            border-radius: 50%;
-        }
-
-        .frase {
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-            font-style: italic;
+        .frase-biblica {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
             color: #666;
-            animation: fadeIn 2s ease;
+            font-style: italic;
+            margin-bottom: 20px;
         }
+
+        /* Nombres */
+        .nombres-nuevos {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.3rem;
+            line-height: 1.1;
+            color: #2f2f2f;
+            margin: 10px 0;
+        }
+
+        .nombres-nuevos span {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #3b3b3b;
+        }
+
+        /* Fecha */
+        .detalles-fecha {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 15px;
+        }
+
+        .col {
+            text-align: center;
+        }
+
+        .etiqueta {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3b3b3b;
+        }
+
+        .valor {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Lugar y cierre */
+        .lugar {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .despedida {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2b2b2b;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nombres-nuevos {
+                font-size: 2.5rem;
+            }
+
+            .nombres-nuevos span {
+                font-size: 1rem;
+            }
+
+            .texto-invitacion {
+                font-size: 0.9rem;
+            }
+
+            .frase-biblica {
+                font-size: 0.8rem;
+            }
+
+            .valor {
+                font-size: 1.1rem;
+            }
+
+            .lugar {
+                font-size: 0.8rem;
+            }
+        }
+
+
+
 
         /* ===== CONTADOR ===== */
         .contador-section {
@@ -260,46 +340,19 @@
         }
 
         .titulo {
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(180deg, #7b8f89 0%, #6e837d 100%);
-            color: #fff;
             font-family: 'Great Vibes', cursive;
-            font-size: 1.8rem;
-            padding: 10px 50px;
+            font-size: 2.5rem;
+            color: #2f4858;
             text-align: center;
-            line-height: 1;
-            margin: 30px 0;
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            margin: 25px 0 30px 0;
+            background: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+            text-shadow: none;
+            font-weight: normal;
         }
 
-        .titulo::before,
-        .titulo::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 25px;
-            height: 100%;
-            background: linear-gradient(180deg, #7b8f89 0%, #6e837d 100%);
-        }
-
-        .titulo::before {
-            left: 0;
-            clip-path: polygon(0 0, 100% 50%, 0 100%);
-        }
-
-        .titulo::after {
-            right: 0;
-            clip-path: polygon(100% 0, 0 50%, 100% 100%);
-        }
-
-        .titulo:hover {
-            transform: scale(1.02);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-            transition: all 0.2s ease-in-out;
-        }
 
         .evento p {
             margin: 5px 0;
@@ -323,8 +376,8 @@
             border-radius: 20px;
             background: #6e837d;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
             font-weight: 500;
+            cursor: pointer;
             transition: background 0.3s, transform 0.2s;
         }
 
@@ -389,7 +442,7 @@
         .card h3 {
             font-weight: bold;
             margin-bottom: 15px;
-            color: #c9a86a;
+            color: #2f4858;
         }
 
         .card p {
@@ -402,7 +455,8 @@
             border: none;
             padding: 10px 20px;
             border-radius: 20px;
-            background: #fff;
+            background: #6e837d;
+            color: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             font-weight: 500;
@@ -410,31 +464,9 @@
         }
 
         .card button:hover {
-            background: #e8edea;
+            background: #7b8f89;
+            color: #ffffff;
             transform: scale(1.05);
-        }
-
-        /* ===== MAPA ===== */
-        .mapa {
-            padding: 60px 20px;
-            text-align: center;
-            /*background: #faf7f3;*/
-        }
-
-        .mapa h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: #2f4858;
-        }
-
-        .mapa iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Responsive */
@@ -520,7 +552,8 @@
         }
 
         .cerrar {
-            position: sticky;       /* 👈 se queda visible al hacer scroll */
+            position: sticky;
+            /* 👈 se queda visible al hacer scroll */
             top: 10px;
             right: 15px;
             align-self: flex-end;
@@ -588,15 +621,15 @@
 
         .regalos-titulo {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            color: #6e837d;
+            font-size: 2.5rem;
+            color: #2f4858;
             /* verde gris elegante */
             margin-bottom: 10px;
         }
 
         .regalos-texto {
             font-family: 'Poppins', sans-serif;
-            color: #777;
+            color: #2f4858;
             font-size: 1rem;
             margin-bottom: 25px;
         }
@@ -784,20 +817,6 @@
             background: #5b6f68;
             transform: scale(1.05);
         }
-
-        .imagen-invitacion {
-            /*background-color: #faf7f3;*/
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .img-invitacion {
-            max-width: 40%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            animation: fadeInUp 1.5s ease;
-        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -809,18 +828,31 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <p class="fecha">14.02.2026</p>
-            <h1 class="nombres">Mónica <span class="and">&</span> Carlos</h1>
-            <p class="frase">Nos complace invitarte a celebrar nuestro matrimonio</p>
-        </div>
+            <p class="texto-invitacion">TENEMOS EL GUSTO DE INVITARTE<br>A NUESTRA BODA</p>
+            <p class="frase-biblica">¡La cuerda de tres hilos no se rompe fácilmente!</p>
+
+            <div class="nombres-nuevos">
+                Mónica<br><span>&</span><br>Carlos
+
+                <div class="detalles-fecha">
+                    <div class="col">
+                        <p class="etiqueta">SÁBADO</p>
+                        <p class="valor">14</p>
+                    </div>
+                    <div class="col">
+                        <p class="etiqueta">FEB</p>
+                        <p class="valor">3:30 PM</p>
+                    </div>
+                </div>
+
+                <p class="lugar">HACIENDA EL OLIMPO<br>KM 3.4 VÍA, SUBACHOQUE, CUNDINAMARCA</p>
+                <p class="despedida">¡TE ESPERAMOS!</p>
+            </div>
     </section>
 
-    <div class="main-background">
 
-        <!-- Imagen de invitación -->
-        <section class="imagen-invitacion">
-            <img src="Invitacion_1.jpg" alt="Invitación de boda" class="img-invitacion">
-        </section>
+
+    <div class="main-background">
 
         <!-- CONTADOR -->
         <section class="contador-section" id="contador">
@@ -850,7 +882,9 @@
 
                 <div class="evento">
                     <div class="icono">💍</div>
-                    <div class="titulo">Ceremonia y Fiesta</div>
+                    <div class="titulo">
+                        Ceremonia y Fiesta
+                    </div>
                     <p><strong>Día</strong>Sábado 14 de Febrero - 3:30pm</p>
                     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ceremonia+y+Fiesta+de+Matrimonio&dates=20260214T203000Z/20260215T050000Z&details=Celebración+especial+de+nuestro+matrimonio.&location=Hacienda+El+Olimpo,+Subachoque,+Colombia"
                         target="_blank" class="boton">
@@ -903,17 +937,6 @@
                 <i class="fa-solid fa-gift"></i>
             </div>
             <target="_blank" class="boton-regalos">LLUVIA DE SOBRES</a>
-        </section>
-
-
-        <!-- MAPA -->
-        <section class="mapa">
-            <h2>Ubicación</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.5624192057626!2d-74.20851172603382!3d4.844933340392432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f803b59c040d7%3A0xaf6eb2d53a556be!2sHacienda%20El%20Olimpo%20-%20Hacienda%20Subachoque!5e0!3m2!1sen!2sco!4v1759099104327!5m2!1sen!2sco"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
         </section>
 
         <div id="modalDressCode" class="modal">
@@ -1221,7 +1244,3 @@
 </body>
 
 </html>
-
-
-
-
