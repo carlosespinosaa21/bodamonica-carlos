@@ -28,6 +28,8 @@
         background-repeat: no-repeat;
         background-attachment: fixed; /* evitar problemas en móviles */
         min-height: 100vh; /* asegura que el fondo tenga altura suficiente */
+        will-change: transform;
+        transform: translateZ(0);
         }
 
         /* capa blanca semitransparente para que el texto se lea bien */
@@ -43,24 +45,17 @@
         position: relative;
         z-index: 1;
         }
-
-        /* ajustes específicos para móviles: menos recorte / menos zoom */
-        @media (max-width: 768px) {
-            body {
-                background-image: url("Invitacion_1_Iconos.jpg");
-                background-position: center top;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: scroll; /* Safari ignora fixed, scroll es más estable */
-                background-color: #f9f7f3; /* color de respaldo */
-                }
+        
+        @supports (-webkit-touch-callout: none) {
             .main-background {
-                background: none; /* evita que se duplique el fondo */
-                min-height: auto;
-                padding-bottom: 0;
-            }
+            background-attachment: scroll; /* evita zoom */
+            background-size: 100% auto; /* mantiene la proporción sin acercar */
+            background-position: center top;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            background-color: #f9f7f3; /* color de respaldo */
+          }
         }
-
         /* ===== ANIMACIONES ===== */
         @keyframes bounce {
 
@@ -1273,6 +1268,7 @@
 </body>
     
 </html>
+
 
 
 
