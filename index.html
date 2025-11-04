@@ -36,20 +36,28 @@
         position: absolute;
         inset: 0;
         background: rgba(255,255,255,0.85);
-        z-index: 1; /* por encima del fondo pero por debajo del contenido */
+        z-index: -1; /* por encima del fondo pero por debajo del contenido */
         }
 
         .main-background > * {
         position: relative;
-        z-index: 2;
+        z-index: 1;
         }
 
         /* ajustes específicos para móviles: menos recorte / menos zoom */
         @media (max-width: 768px) {
-        .main-background {
+            body {
+            background-image: url("Invitacion_1_Iconos.jpg");
+            background-position: center top;
             background-size: cover;
-            background-position: center center;
-            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Safari ignora fixed, scroll es más estable */
+            background-color: #f9f7f3; /* color de respaldo */
+            }
+            .main-background {
+            background: none; /* evita que se duplique el fondo */
+            min-height: auto;
+            padding-bottom: 0;
             }
         }
 
@@ -1265,6 +1273,7 @@
 </body>
     
 </html>
+
 
 
 
