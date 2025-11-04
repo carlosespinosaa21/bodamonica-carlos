@@ -20,25 +20,24 @@
 
         /* Fondo general para todo el contenido después del hero */
         .main-background {
-        position: relative;   /* importante: para que ::before funcione correctamente */
+        position: relative;
         z-index: 0;
         background-image: url("Invitacion_1_Iconos.jpg");
         background-position: center center;
         background-size: cover;    /* desktop: cubrir toda el área */
         background-repeat: no-repeat;
-        background-attachment: fixed; /* evitar problemas en móviles */
-        min-height: 100vh; /* asegura que el fondo tenga altura suficiente */
+        background-attachment: fixed;
+        min-height: 100vh;
         will-change: transform;
         transform: translateZ(0);
         }
 
-        /* capa blanca semitransparente para que el texto se lea bien */
         .main-background::before {
         content: "";
         position: absolute;
         inset: 0;
         background: rgba(255,255,255,0.85);
-        z-index: -1; /* por encima del fondo pero por debajo del contenido */
+        z-index: -1; /* por encima del fondo y por debajo del contenido */
         }
 
         .main-background > * {
@@ -48,12 +47,12 @@
         
         @supports (-webkit-touch-callout: none) {
             .main-background {
-            background-attachment: scroll; /* evita zoom */
-            background-size: 100% auto; /* mantiene la proporción sin acercar */
+            background-attachment: scroll;
+            background-size: 100% auto;
             background-position: center top;
             background-repeat: no-repeat;
             min-height: 100vh;
-            background-color: #f9f7f3; /* color de respaldo */
+            background-color: #f9f7f3;
           }
         }
         /* ===== ANIMACIONES ===== */
@@ -574,7 +573,6 @@
 
         .cerrar {
             position: sticky;
-            /* 👈 se queda visible al hacer scroll */
             top: 10px;
             right: 15px;
             align-self: flex-end;
@@ -607,7 +605,7 @@
         }
 
 
-        /* ===== BOTÓN DE MÚSICA (con emojis) ===== */
+        /* ===== BOTÓN DE MÚSICA ===== */
         #btnMusica {
             position: fixed;
             bottom: 25px;
@@ -635,7 +633,6 @@
         /* Sección de regalos */
         .regalos {
             /*background-color: #FAF7F3;*/
-            /* mismo fondo suave de la página */
             text-align: center;
             padding: 60px 20px;
         }
@@ -644,7 +641,6 @@
             font-family: 'Great Vibes', cursive;
             font-size: 2.5rem;
             color: #2f4858;
-            /* verde gris elegante */
             margin-bottom: 10px;
         }
 
@@ -703,11 +699,10 @@
             transform: scale(1.05);
         }
 
-        /* ===== ANIMACIÓN DEL EMOJI 💍 ===== */
+        /* ===== ANIMACIÓN EMOJI 💍 ===== */
         .icono {
             font-size: 2.6rem;
             color: #6e837d;
-            /* tono verde gris suave, coherente con el diseño */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1268,6 +1263,7 @@
 </body>
     
 </html>
+
 
 
 
