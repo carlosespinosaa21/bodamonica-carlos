@@ -1,3 +1,29 @@
+/*
+ * ========================================
+ * INVITACIÓN DE BODA - MÓNICA & CARLOS
+ * ========================================
+ * 
+ * Archivo: styles.css
+ * Descripción: Estilos principales del sitio web
+ * 
+ * ESTRUCTURA:
+ * 1. Estilos Base
+ * 2. Fondo General
+ * 3. Media Queries - Background Responsivo
+ * 4. Animaciones
+ * 5. Hero Section
+ * 6. Contador
+ * 7. Eventos (Ceremonia y Fiesta)
+ * 8. Sección Fiesta
+ * 9. Modales
+ * 10. Botón Música
+ * 11. Sección Regalos
+ * 12. Media Queries Responsivas (Consolidadas)
+ * 
+ * ========================================
+ */
+
+/* ===== ESTILOS BASE ===== */
 body,
 html {
     margin: 0;
@@ -8,43 +34,95 @@ html {
     background: #ffffff;
 }
 
-/* Fondo general para todo el contenido después del hero */
+/* ===== FONDO GENERAL ===== */
 .main-background {
-position: relative;
-z-index: 0;
-background-image: url("../images/Invitacion_1_Iconos.jpg");
-background-position: center center;
-background-size: cover;    /* desktop: cubrir toda el área */
-background-repeat: no-repeat;
-background-attachment: fixed;
-min-height: 100vh;
-will-change: transform;
-transform: translateZ(0);
+    position: relative;
+    z-index: 0;
+    background-image: url("../images/Invitacion_1_Iconos.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .main-background::before {
-content: "";
-position: absolute;
-inset: 0;
-background: rgba(255,255,255,0.85);
-z-index: -1; /* por encima del fondo y por debajo del contenido */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.75);
+    z-index: -1;
 }
 
 .main-background > * {
-position: relative;
-z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
+/* ===== MEDIA QUERIES PARA BACKGROUND RESPONSIVO ===== */
+@media (max-width: 1200px) {
+    .main-background {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-background {
+        background-attachment: scroll;
+        background-size: contain;
+        background-position: center top;
+        background-repeat: repeat-y;
+        min-height: auto;
+        background-color: #f9f7f3;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-background {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-background {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-background {
+        padding: 10px 0;
+    }
+}
+
+/* Soporte para dispositivos iOS/Safari y landscape */
 @supports (-webkit-touch-callout: none) {
     .main-background {
-    background-attachment: scroll;
-    background-size: 100% auto;
-    background-position: center top;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    background-color: #f9f7f3;
-  }
+        background-attachment: scroll;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: repeat-y;
+        min-height: auto;
+        background-color: #f9f7f3;
+    }
 }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    .main-background {
+        background-attachment: scroll;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: repeat-y;
+        min-height: auto;
+        background-color: #f9f7f3;
+    }
+}
+
 /* ===== ANIMACIONES ===== */
 @keyframes bounce {
 
@@ -213,33 +291,6 @@ z-index: 1;
     font-size: 0.85rem;
     font-weight: 500;
     color: #2b2b2b;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .nombres-nuevos {
-        font-size: 2.5rem;
-    }
-
-    .nombres-nuevos span {
-        font-size: 1rem;
-    }
-
-    .texto-invitacion {
-        font-size: 0.9rem;
-    }
-
-    .frase-biblica {
-        font-size: 0.8rem;
-    }
-
-    .valor {
-        font-size: 1.1rem;
-    }
-
-    .lugar {
-        font-size: 0.8rem;
-    }
 }
 
 /* ===== CONTADOR ===== */
@@ -428,6 +479,7 @@ z-index: 1;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
+    padding: 0 20px;
 }
 
 .card {
@@ -438,6 +490,8 @@ z-index: 1;
     flex: 1 1 280px;
     max-width: 300px;
     transition: transform 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -473,31 +527,6 @@ z-index: 1;
     background: #7b8f89;
     color: #ffffff;
     transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nombres {
-        font-size: 2.5rem;
-    }
-
-    .contador-box {
-        padding: 25px;
-    }
-
-    .contador span {
-        font-size: 1.5rem;
-    }
-
-    .eventos-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .fiesta-cards {
-        flex-direction: column;
-        gap: 20px;
-    }
 }
 
 .modal {
@@ -817,4 +846,127 @@ z-index: 1;
 .btn-enviar:hover {
     background: #5b6f68;
     transform: scale(1.05);
+}
+
+/* ===== MEDIA QUERIES RESPONSIVAS ===== */
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .nombres-nuevos {
+        font-size: 2.5rem;
+    }
+
+    .nombres-nuevos span {
+        font-size: 1rem;
+    }
+
+    .texto-invitacion {
+        font-size: 0.9rem;
+    }
+
+    .frase-biblica {
+        font-size: 0.8rem;
+    }
+
+    .valor {
+        font-size: 1.1rem;
+    }
+
+    .lugar {
+        font-size: 0.8rem;
+    }
+
+    /* Contador */
+    .nombres {
+        font-size: 2.5rem;
+    }
+
+    .contador-box {
+        padding: 25px;
+    }
+
+    .contador span {
+        font-size: 1.5rem;
+    }
+
+    /* Eventos */
+    .eventos-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Fiesta Section */
+    .fiesta-cards {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 0 15px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 640px) {
+    .fiesta-section {
+        padding: 40px 15px;
+    }
+    
+    .fiesta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .fiesta-cards {
+        padding: 0 10px;
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Móviles estándar */
+@media (max-width: 480px) {
+    .fiesta-section {
+        padding: 30px 10px;
+    }
+    
+    .fiesta-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .fiesta-section p {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    .fiesta-cards {
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+    }
+    
+    .card button {
+        width: 100%;
+        padding: 12px 20px;
+    }
 }
